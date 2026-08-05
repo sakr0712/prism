@@ -22,7 +22,11 @@ export default function Services() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.22 }}
-              transition={{ delay: index * 0.05, duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                delay: index * 0.05,
+                duration: 0.72,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
               <div className="service-card__top">
                 <div className="service-card__icon">
@@ -38,10 +42,6 @@ export default function Services() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              <div className="service-card__footer">
-                <span>Custom scope available</span>
-                <ArrowUpRight size={17} />
-              </div>
             </motion.article>
           ))}
         </div>

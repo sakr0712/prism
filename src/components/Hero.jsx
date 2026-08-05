@@ -1,4 +1,5 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 
 const reveal = {
@@ -12,18 +13,37 @@ const reveal = {
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
   const { scrollY } = useScroll();
-  const imageY = useTransform(scrollY, [0, 500], [0, prefersReducedMotion ? 0 : 70]);
-  const contentY = useTransform(scrollY, [0, 500], [0, prefersReducedMotion ? 0 : -24]);
-  const panelY = useTransform(scrollY, [0, 500], [0, prefersReducedMotion ? 0 : -44]);
+  const imageY = useTransform(scrollY, [0, 500], [0, prefersReducedMotion || isMobile ? 0 : 70]);
+  const contentY = useTransform(scrollY, [0, 500], [0, prefersReducedMotion || isMobile ? 0 : -24]);
+  const panelY = useTransform(scrollY, [0, 500], [0, prefersReducedMotion || isMobile ? 0 : -44]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    const updateMobile = () => setIsMobile(mediaQuery.matches);
+
+    updateMobile();
+    mediaQuery.addEventListener("change", updateMobile);
+
+    return () => mediaQuery.removeEventListener("change", updateMobile);
+  }, []);
 
   return (
     <section className="hero" id="top">
       <motion.div
         className="hero-media"
-        style={{ y: imageY, scale: prefersReducedMotion ? 1 : 1.08 }}
-        animate={prefersReducedMotion ? undefined : { scale: 1.14 }}
-        transition={prefersReducedMotion ? undefined : { duration: 13, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        style={{ y: imageY, scale: prefersReducedMotion || isMobile ? 1 : 1.08 }}
+        animate={
+          prefersReducedMotion || isMobile
+            ? undefined
+            : { scale: 1.14 }
+        }
+        transition={
+          prefersReducedMotion || isMobile
+            ? undefined
+            : { duration: 13, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }
+        }
       />
       <div className="hero-overlay" />
       <div className="container hero-grid">

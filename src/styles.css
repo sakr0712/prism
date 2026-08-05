@@ -359,13 +359,15 @@ section[id],
 .hero-media {
   background: url("/prism-hero-banner.png") center center / cover no-repeat;
   will-change: transform;
+  filter: blur(2px);
+  transform: scale(1.02);
 }
 
 .hero-overlay {
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(8, 8, 8, 0.74) 0%, rgba(8, 8, 8, 0.5) 42%, rgba(8, 8, 8, 0.22) 100%),
-    linear-gradient(180deg, rgba(8, 8, 8, 0.18) 0%, rgba(8, 8, 8, 0.52) 100%);
+    linear-gradient(90deg, rgba(8, 8, 8, 0.8) 0%, rgba(8, 8, 8, 0.58) 42%, rgba(8, 8, 8, 0.3) 100%),
+    linear-gradient(180deg, rgba(8, 8, 8, 0.26) 0%, rgba(8, 8, 8, 0.6) 100%);
 }
 
 .hero-grid {
@@ -1515,6 +1517,10 @@ section[id],
     padding-top: 138px;
   }
 
+  .hero-media {
+    background-position: 62% center;
+  }
+
   .hero-credibility {
     grid-template-columns: 1fr;
   }
@@ -1565,6 +1571,33 @@ section[id],
     font-size: clamp(3.8rem, 16vw, 5.2rem);
   }
 
+  .hero {
+    padding: 124px 0 72px;
+  }
+
+  .hero-media,
+  .hero-overlay {
+    inset: 0;
+  }
+
+  .hero-media {
+    background-position: 64% center;
+    background-size: cover;
+    transform: none !important;
+    will-change: auto;
+    filter: blur(1.5px);
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(8, 8, 8, 0.6) 0%, rgba(8, 8, 8, 0.46) 22%, rgba(8, 8, 8, 0.78) 100%),
+      linear-gradient(90deg, rgba(8, 8, 8, 0.3) 0%, rgba(8, 8, 8, 0.14) 100%);
+  }
+
+  .hero-grid {
+    gap: 34px;
+  }
+
   .hero-actions,
   .field-row,
   .footer-bottom {
@@ -1596,6 +1629,10 @@ section[id],
   .contact-form,
   .contact-shell {
     padding: 24px;
+  }
+
+  .hero-panel {
+    min-height: auto;
   }
 
   .hero-kicker {
