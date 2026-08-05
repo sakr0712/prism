@@ -16,7 +16,7 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("top");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 28);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -33,11 +33,14 @@ export default function Navbar() {
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]) setActiveSection(visible[0].target.id);
+
+        if (visible[0]) {
+          setActiveSection(visible[0].target.id);
+        }
       },
       {
-        rootMargin: "-18% 0px -62% 0px",
-        threshold: [0.01, 0.15, 0.35, 0.6],
+        rootMargin: "-18% 0px -55% 0px",
+        threshold: [0.1, 0.3, 0.55],
       },
     );
 
@@ -72,7 +75,7 @@ export default function Navbar() {
           </a>
         ))}
         <a
-          className="button button--small"
+          className="button button--small button--nav"
           href="#contact"
           onClick={() => setOpen(false)}
         >
@@ -82,11 +85,11 @@ export default function Navbar() {
 
       <button
         className="menu-button"
-        onClick={() => setOpen(!open)}
+        onClick={() => setOpen((value) => !value)}
         aria-label="Toggle navigation"
         aria-expanded={open}
       >
-        {open ? <X /> : <Menu />}
+        {open ? <X size={20} /> : <Menu size={20} />}
       </button>
     </header>
   );

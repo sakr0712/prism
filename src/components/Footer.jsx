@@ -1,5 +1,4 @@
-import { ArrowUpRight, Mail, MapPin, MessageCircle } from "lucide-react";
-import logo from "../assets/prism-logo.png";
+import { ArrowUpRight, MapPin, MessageCircle, Phone } from "lucide-react";
 import { site } from "../data/site";
 
 const footerLinks = [
@@ -16,8 +15,8 @@ export default function Footer() {
       <div className="container">
         <div className="footer-cta">
           <div>
-            <p className="eyebrow">Ready when you are</p>
-            <h2>Let’s turn your idea into a brand people remember.</h2>
+            <p className="eyebrow eyebrow--light">Ready when you are</p>
+            <h2>Let&apos;s turn your idea into a brand people remember.</h2>
           </div>
           <a className="button button--light" href="#contact">
             Start a Project <ArrowUpRight size={18} />
@@ -27,11 +26,11 @@ export default function Footer() {
         <div className="footer-main">
           <div className="footer-intro">
             <div className="brand footer-brand">
-              <img src={logo} alt="PRISM" />
+              <img src="/icon.png" alt="PRISM icon" className="footer-logo-image" />
             </div>
+            <span className="footer-brand-mark">Fashion brand development</span>
             <p>
-              Clothing production and fashion brand development—from first idea
-              to first sale.
+              Fashion brand development and clothing production from idea to sale.
             </p>
           </div>
 
@@ -45,8 +44,11 @@ export default function Footer() {
           </div>
 
           <div className="footer-column">
-            <span className="footer-label">Connect</span>
-            {/* <a href={`mailto:${site.email}`}><Mail size={15} />{site.email}</a> */}
+            <span className="footer-label">Contact</span>
+            <a href={`tel:${site.phone.replace(/\s/g, "")}`}>
+              <Phone size={15} />
+              {site.phone}
+            </a>
             <a
               href={`https://wa.me/${site.whatsapp}`}
               target="_blank"
@@ -55,9 +57,6 @@ export default function Footer() {
               <MessageCircle size={15} />
               WhatsApp
             </a>
-            {/* <a href={site.instagram} target="_blank" rel="noreferrer">
-              Instagram <ArrowUpRight size={14} />
-            </a> */}
           </div>
 
           <div className="footer-column">
@@ -67,14 +66,13 @@ export default function Footer() {
               {site.location}
             </span>
             <p>
-              Working with emerging and established fashion brands across Egypt
-              and beyond.
+              Working with emerging and established brands across Egypt and beyond.
             </p>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} PRISM. All rights reserved.</span>
+          <span>&copy; {new Date().getFullYear()} PRISM. All rights reserved.</span>
           <span>A Light Group company.</span>
         </div>
       </div>

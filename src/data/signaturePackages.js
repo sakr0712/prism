@@ -3,8 +3,9 @@ export const signaturePackages = [
     name: "Foundation",
     eyebrow: "From idea to plan",
     price: "100,000 EGP",
-    duration: "4–5 weeks",
-    description: "For founders who need a complete strategic blueprint before individual garments and brand assets are created.",
+    duration: "4-5 weeks",
+    description:
+      "For founders who need a full strategic blueprint before garments and brand assets are created.",
     featured: false,
     deliverables: [
       "Brand discovery workshop",
@@ -21,8 +22,9 @@ export const signaturePackages = [
     name: "Build",
     eyebrow: "From plan to product",
     price: "130,000 EGP",
-    duration: "6–8 weeks",
-    description: "For brands ready to create their complete identity, garments, technical files, and production samples.",
+    duration: "6-8 weeks",
+    description:
+      "For brands ready to create their identity, garments, technical files, and samples.",
     featured: true,
     deliverables: [
       "Everything included in Foundation",
@@ -38,8 +40,9 @@ export const signaturePackages = [
     name: "Launch",
     eyebrow: "From product to business",
     price: "250,000 EGP",
-    duration: "8–10 weeks",
-    description: "For brands that want the complete digital, content, e-commerce, and market-launch solution.",
+    duration: "8-10 weeks",
+    description:
+      "For brands that want the full digital, content, e-commerce, and launch solution.",
     featured: false,
     deliverables: [
       "Everything included in Build",

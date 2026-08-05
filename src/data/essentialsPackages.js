@@ -3,7 +3,7 @@ export const essentialsPackages = [
     name: "Lite",
     price: "25,000 EGP",
     description:
-      "A focused content and advisory package for existing brands that need a stronger presentation.",
+      "A focused content and advisory package for brands that need a stronger presentation.",
     items: [
       "Professional photoshoot",
       "1 consulting session",
@@ -15,7 +15,7 @@ export const essentialsPackages = [
     name: "Plus",
     price: "75,000 EGP",
     description:
-      "A practical online-selling package for brands that already have products and need an operational storefront.",
+      "A practical online-selling package for brands with products that need an operational storefront.",
     items: [
       "Shopify store setup",
       "Payment gateway integration",
@@ -28,7 +28,7 @@ export const essentialsPackages = [
     name: "Studio",
     price: "175,000 EGP",
     description:
-      "A complete execution package for brands that know what they want and need the assets to launch professionally.",
+      "A complete execution package for brands that know what they want and need the right launch assets.",
     items: [
       "Logo and brand identity",
       "Shopify store",
