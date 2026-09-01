@@ -1,5 +1,5 @@
 import { ArrowUpRight, MapPin, MessageCircle, Phone } from "lucide-react";
-import logo from "../assets/prism-logo.png";
+import logo from "../assets/footer-logo.png";
 import { site } from "../data/site";
 
 const footerLinks = [
