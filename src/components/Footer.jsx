@@ -1,4 +1,5 @@
 import { ArrowUpRight, MapPin, MessageCircle, Phone } from "lucide-react";
+import logo from "../assets/prism-logo.png";
 import { site } from "../data/site";
 
 const footerLinks = [
@@ -26,11 +27,12 @@ export default function Footer() {
         <div className="footer-main">
           <div className="footer-intro">
             <div className="brand footer-brand">
-              <img src="/icon.png" alt="PRISM icon" className="footer-logo-image" />
+              <img src={logo} alt="PRISM icon" className="footer-logo-image" />
             </div>
             <span className="footer-brand-mark">Fashion brand development</span>
             <p>
-              Fashion brand development and clothing production from idea to sale.
+              Fashion brand development and clothing production from idea to
+              sale.
             </p>
           </div>
 
@@ -66,13 +68,16 @@ export default function Footer() {
               {site.location}
             </span>
             <p>
-              Working with emerging and established brands across Egypt and beyond.
+              Working with emerging and established brands across Egypt and
+              beyond.
             </p>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <span>&copy; {new Date().getFullYear()} PRISM. All rights reserved.</span>
+          <span>
+            &copy; {new Date().getFullYear()} PRISM. All rights reserved.
+          </span>
           <span>A Light Group company.</span>
         </div>
       </div>
